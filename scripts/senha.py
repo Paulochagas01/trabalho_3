@@ -19,7 +19,7 @@ def check_password(user_password, stored_hashed_password):
   return hashed_user_password == stored_hashed_password
     
 
-if ___name___ == "___main___":
+if __name__ == "__main__":
     #Obtém o diretório do script
     script_directory = os.path.dirname(os.path.abspath(__file__))
 
