@@ -10,9 +10,9 @@ def hash_password(password):
     hashed_password = hashlib.sha256(password.encode()).hexdigest()
     return hashed_password
 
-def hash_password(password):
-  hashed_password = hashlib.sha256(password.encode()).hexdigest()
-  return hashed_password
+#def hash_password(password):
+#  hashed_password = hashlib.sha256(password.encode()).hexdigest()
+#  return hashed_password
 
 def check_password(user_password, stored_hashed_password):
   hashed_user_password = hash_password(user_password)
@@ -33,7 +33,7 @@ if __name__ == "__main__":
 
     
     #Input da senha pelo usuario
-    input_password = 'senha123' # Senha Correta
+    input_password = 'senha_aleatoria' # Senha Correta
     #input_password = 'senha'    # Senha Incorreta
 
     #Conferindo as senhas obtidas
