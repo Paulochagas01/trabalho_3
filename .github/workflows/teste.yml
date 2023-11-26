@@ -24,7 +24,7 @@ jobs:
   branch_2:
     runs-on: ubuntu-latest
 
-    if: github.ref == 'refs/heads/verificacao_interna'
+    if: github.ref == 'refs/heads/branch2'
 
     steps:
     - name: Checkout do código
