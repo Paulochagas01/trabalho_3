@@ -1,2 +1,2 @@
-# teste_trab_3
-Meu teste de scripts para o trabalho 3
+# trabalho_3
+Validação de senha automatizado
