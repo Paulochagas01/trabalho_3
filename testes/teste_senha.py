@@ -1,48 +1,14 @@
-import os
-import hashlib
-import sys
+from ..scripts.senha import check_password, hash_password
 
-def get_password_from_file(file_path):
-    with open(file_path, 'r') as file:
-        return file.read().strip()
-
-def hash_password(password):
-    hashed_password = hashlib.sha256(password.encode()).hexdigest()
-    return hashed_password
-
-def hash_password(password):
-  hashed_password = hashlib.sha256(password.encode()).hexdigest()
-  return hashed_password
-
-def check_password(user_password, stored_hashed_password):
-  hashed_user_password = hash_password(user_password)
-  return hashed_user_password == stored_hashed_password
+# Define uma função de teste chamada test_verificar_senha
+def test_verificar_senha():
+    # Cria uma variável chamada stored_password e atribui um valor fictício a ela
+    stored_hashed_password='55a5e9e78207b4df8699d60886fa070079463547b095d1a05bc719bb4e6cd251'
+    correct_user_password = "senha123"
+    incorrect_user_password= "senha"
     
-
-if _name_ == "_main_":
-    #Obtém o diretório do script
-    script_directory = os.path.dirname(os.path.abspath(_file_))
-
-    #Caminhos dos arquivos de senha
-    password_file = os.path.join(script_directory, "../passwords/password.txt")
-    hashed_password_file = os.path.join(script_directory, "../passwords/encryptedPassword.txt")
-
-    #Leia a senha armazenada e a senha criptografada do arquivo
-    stored_password = get_password_from_file(password_file)
-    stored_hashed_password = get_password_from_file(hashed_password_file)
-
+    # Testa se a função check_password retorna True para a senha correta
+    assert check_password(correct_user_password, stored_hashed_password) is True, "A senha correta deveria ser validada"
     
-    #Input da senha pelo usuario
-    # input_password = 'senha123'
-
-    #Conferindo as senhas obtidas
-    # print(f"Senha contida no arquivo password.txt: {stored_password}")
-    # print(f"Senha contida no arquivo encryptedPassword.txt: {stored_hashed_password}")
-    # print(f"Senha inputada pelo usuario: {input_password}")
-
-    # #Conferindo a senha fornecida pelo usuario e a contida no arquivo txt
-    # if check_password(input_password,stored_hashed_password):
-    #   print("Senha Correta!")
-    # else:
-    #   print("Senha Incorreta!")
-    #   sys.exit(1)
+    # Testa se a função check_password retorna False para uma senha incorreta
+    assert check_password(incorrect_user_password, stored_hashed_password) is False, "A senha incorreta deveria falhar"
