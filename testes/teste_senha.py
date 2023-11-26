@@ -19,9 +19,9 @@ def check_password(user_password, stored_hashed_password):
   return hashed_user_password == stored_hashed_password
     
 
-if __name__ == "__main__":
+if _name_ == "_main_":
     #Obtém o diretório do script
-    script_directory = os.path.dirname(os.path.abspath(__file__))
+    script_directory = os.path.dirname(os.path.abspath(_file_))
 
     #Caminhos dos arquivos de senha
     password_file = os.path.join(script_directory, "../passwords/password.txt")
@@ -33,20 +33,16 @@ if __name__ == "__main__":
 
     
     #Input da senha pelo usuario
-    #input_password = 'senha123' # Senha Correta
-    # input_password = 'senha'    # Senha Incorreta
+    # input_password = 'senha123'
 
     #Conferindo as senhas obtidas
     # print(f"Senha contida no arquivo password.txt: {stored_password}")
     # print(f"Senha contida no arquivo encryptedPassword.txt: {stored_hashed_password}")
-    #print("Check de senha")
-    #print(f"Senha inputada pelo usuario: {input_password}")
+    # print(f"Senha inputada pelo usuario: {input_password}")
 
-    #Conferindo a senha fornecida pelo usuario e a contida no arquivo txt
-    #if check_password(input_password,stored_hashed_password):
-    #  print("Senha Correta!")
-    #else:
-    #  print("Senha Incorreta!")
-    #  sys.exit(1)
-
-
+    # #Conferindo a senha fornecida pelo usuario e a contida no arquivo txt
+    # if check_password(input_password,stored_hashed_password):
+    #   print("Senha Correta!")
+    # else:
+    #   print("Senha Incorreta!")
+    #   sys.exit(1)
